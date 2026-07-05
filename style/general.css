@@ -1,0 +1,27 @@
+:root{
+  --highlight-color: #cdecff;
+  --lighttone-color: #89daff;
+  --midtone-color: #005791;
+  --dark-color: #00345f;
+}
+
+*{
+  font-family: inter;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 4rem 1fr 25%;
+  gap: 1rem;
+  background: radial-gradient(circle at 100% 100%, var(--highlight-color)5% 10%, transparent 90% 100%), radial-gradient(circle at 0% 0%,var(--highlight-color)0% 5%, transparent 60% 100%);
+}
+svg {
+  width: 24px;
+  height: auto;
+  stroke: none;
+}

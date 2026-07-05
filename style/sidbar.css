@@ -1,0 +1,39 @@
+nav {
+  position: sticky;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 1rem;
+  background-color: var(--dark-color);
+  height: 80%;
+  clip-path: path("M 64,50 A 17,17 0,0,0 50,30 A 90,100 0,0,1 0,0 L 0,850 A 90,100 0,0,1 50,820 A 17,17 0,0,0 64,800 Z");
+   svg{
+    fill: var(--highlight-color);
+  }
+}
+
+.nav-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+
+.nav-links{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+ 
+}
+
+.dashboard-icon{
+  width: 27px;
+}
+
+.note-icon {
+  width: 90%;
+  stroke: var(--dark-color);
+}

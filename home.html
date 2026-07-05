@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style/general.css">
+<link rel="stylesheet" href="style/sidbar.css">
+<link rel="stylesheet" href="style/chatbot.css">
+
+  <style>
+    main{
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .dashboard-top{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .welcome{
+      color: var(--dark-color);
+      padding: 2rem;
+      width: 55%;
+      font-size: 80px;
+      font-weight: bold;
+    }
+
+    .progress-icon {
+      fill: none;
+      stroke: var(--dark-color);
+      stroke-width: 90px;
+      width: 100%;
+    }
+
+    .overview{
+      display: flex;
+      gap: .5rem;
+      height: 80%;
+    }
+
+    .result{
+      width: 25%;
+      height: auto;
+      padding: 2rem;
+      border-radius: 2rem;
+      background-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.15);
+      color: var(--dark-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .avg{
+      display: flex;
+      justify-content: center;
+      position: relative;
+      color: var(--dark-color);
+    }
+
+    .avg svg{
+      width: 100%;
+      bottom: 3px;
+    }
+
+    .avg-text{
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 25px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .sub-result{
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      background-color: var(--dark-color);
+      color: var(--highlight-color);
+      padding: 1rem;
+      border-radius: 1.5rem;
+      height: 60%;
+      font-size: 15px;
+      font-weight: 200;
+    }
+
+    .sub-elm{
+      display: flex;
+      justify-content: space-between;
+      background-color: var(--midtone-color);
+      padding: 1.5rem;
+      border-radius: 1rem;
+    }
+    
+    .left{
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    .rp{
+      display: flex;
+      gap: .5rem;
+      height: 50%;
+      width: 100%;
+    }
+
+    .recent{
+      width: 30%;
+      background-color: var(--dark-color);
+      box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.15);
+      border-radius: 2rem;
+      padding: 2rem;
+      color: var(--highlight-color);
+    }
+
+    .progress{
+      width: 70%;
+      background-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.15);
+      border-radius: 2rem;
+      padding: 2rem;
+    }
+
+    .strength{
+      display: flex;  
+      gap: .5rem;
+      height: 50%;
+    }
+
+    .strong{
+      width: 50%;
+      background-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.15);
+      border-radius: 2rem;
+      padding: 2rem;
+    }
+
+    .weekness{
+      width: 50%;
+      background-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.15);
+      border-radius: 2rem;
+      padding: 2rem;
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-top">
+      <div>
+        <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.41 56.41">
+        <g id="Layer_1-2" data-name="Layer 1">
+          <g>
+            <path class="cls-1" d="M40.92,22.81l15.49,3.79L29.81,0l3.79,15.49c.91,3.73,3.59,6.4,7.32,7.32Z"/>
+            <path class="cls-1" d="M33.27,40.59l-3.46,15.82,26.6-26.6-15.82,3.46c-3.81.83-6.48,3.51-7.32,7.32Z"/>
+            <path class="cls-1" d="M23.31,15.99L26.6,0,0,26.6l15.99-3.29c3.85-.79,6.52-3.46,7.32-7.32Z"/>
+            <path class="cls-1" d="M22.86,40.87c-.9-3.74-3.57-6.41-7.32-7.32L0,29.81l26.6,26.6-3.74-15.54Z"/>
+          </g>
+        </g>
+      </svg>
+      </div>
+      <div class="nav-links">
+        <a href="home.html">
+          <svg class="dashboard-icon"  width="800px" height="800px" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.918 10.0005H7.082C6.66587 9.99708 6.26541 10.1591 5.96873 10.4509C5.67204 10.7427 5.50343 11.1404 5.5 11.5565V17.4455C5.5077 18.3117 6.21584 19.0078 7.082 19.0005H9.918C10.3341 19.004 10.7346 18.842 11.0313 18.5502C11.328 18.2584 11.4966 17.8607 11.5 17.4445V11.5565C11.4966 11.1404 11.328 10.7427 11.0313 10.4509C10.7346 10.1591 10.3341 9.99708 9.918 10.0005Z" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.918 4.0006H7.082C6.23326 3.97706 5.52559 4.64492 5.5 5.4936V6.5076C5.52559 7.35629 6.23326 8.02415 7.082 8.0006H9.918C10.7667 8.02415 11.4744 7.35629 11.5 6.5076V5.4936C11.4744 4.64492 10.7667 3.97706 9.918 4.0006Z" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.082 13.0007H17.917C18.3333 13.0044 18.734 12.8425 19.0309 12.5507C19.3278 12.2588 19.4966 11.861 19.5 11.4447V5.55666C19.4966 5.14054 19.328 4.74282 19.0313 4.45101C18.7346 4.1592 18.3341 3.9972 17.918 4.00066H15.082C14.6659 3.9972 14.2654 4.1592 13.9687 4.45101C13.672 4.74282 13.5034 5.14054 13.5 5.55666V11.4447C13.5034 11.8608 13.672 12.2585 13.9687 12.5503C14.2654 12.8421 14.6659 13.0041 15.082 13.0007Z" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.082 19.0006H17.917C18.7661 19.0247 19.4744 18.3567 19.5 17.5076V16.4936C19.4744 15.6449 18.7667 14.9771 17.918 15.0006H15.082C14.2333 14.9771 13.5256 15.6449 13.5 16.4936V17.5066C13.525 18.3557 14.2329 19.0241 15.082 19.0006Z"/>
+          </svg>
+        </a>
+        <a href="note.html">
+          <svg class="note-icon" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="File / Note_Edit">
+            <path id="Vector" d="M10.0002 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H16.8031C17.921 20 18.48 20 18.9074 19.7822C19.2837 19.5905 19.5905 19.2839 19.7822 18.9076C20 18.4802 20 17.921 20 16.8031V14M16 5L10 11V14H13L19 8M16 5L19 2L22 5L19 8M16 5L19 8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </a>
+        <a href="lesson.html">
+          <svg class="lesson-icon" width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.27103 2.11151C5.46135 2.21816 5.03258 2.41324 4.72718 2.71244C4.42179 3.01165 4.22268 3.43172 4.11382 4.225C4.00176 5.04159 4 6.12387 4 7.67568V16.2442C4.38867 15.9781 4.82674 15.7756 5.29899 15.6517C5.82716 15.513 6.44305 15.5132 7.34563 15.5135L20 15.5135V7.67568C20 6.12387 19.9982 5.04159 19.8862 4.22499C19.7773 3.43172 19.5782 3.01165 19.2728 2.71244C18.9674 2.41324 18.5387 2.21816 17.729 2.11151C16.8955 2.00172 15.7908 2 14.2069 2H9.7931C8.2092 2 7.10452 2.00172 6.27103 2.11151ZM6.75862 6.59459C6.75862 6.1468 7.12914 5.78378 7.58621 5.78378H16.4138C16.8709 5.78378 17.2414 6.1468 17.2414 6.59459C17.2414 7.04239 16.8709 7.40541 16.4138 7.40541H7.58621C7.12914 7.40541 6.75862 7.04239 6.75862 6.59459ZM7.58621 9.56757C7.12914 9.56757 6.75862 9.93058 6.75862 10.3784C6.75862 10.8262 7.12914 11.1892 7.58621 11.1892H13.1034C13.5605 11.1892 13.931 10.8262 13.931 10.3784C13.931 9.93058 13.5605 9.56757 13.1034 9.56757H7.58621Z"/>
+            <path d="M7.47341 17.1351H8.68965H13.1034H19.9991C19.9956 18.2657 19.9776 19.1088 19.8862 19.775C19.7773 20.5683 19.5782 20.9884 19.2728 21.2876C18.9674 21.5868 18.5387 21.7818 17.729 21.8885C16.8955 21.9983 15.7908 22 14.2069 22H9.7931C8.2092 22 7.10452 21.9983 6.27103 21.8885C5.46135 21.7818 5.03258 21.5868 4.72718 21.2876C4.42179 20.9884 4.22268 20.5683 4.11382 19.775C4.07259 19.4746 4.0463 19.1382 4.02952 18.7558C4.30088 18.0044 4.93365 17.4264 5.72738 17.218C6.01657 17.1421 6.39395 17.1351 7.47341 17.1351Z"/>
+          </svg>
+        </a>
+        <a href="exams.html">
+          <svg class="exam-icon" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+    viewBox="0 0 204 204" xml:space="preserve">
+            <path d="M139.185,157.339h25.175l-27.223,29.022v-26.974C137.137,158.257,138.056,157.339,139.185,157.339z M108.805,44.654
+              l7.761-1.004l-4.845-6.953L108.805,44.654z M179.518,5v142.339h-40.333c-6.644,0-12.048,5.405-12.048,12.048V204H29.482
+              c-2.762,0-5-2.239-5-5V5c0-2.761,2.238-5,5-5h145.035C177.279,0,179.518,2.239,179.518,5z M95.746,65.76
+              c0.568,0.208,1.148,0.307,1.721,0.307c2.038,0,3.953-1.256,4.694-3.281l2.765-7.546l18.084-2.34l4.595,6.594
+              c0.973,1.395,2.526,2.142,4.106,2.142c0.987,0,1.984-0.292,2.854-0.898c2.266-1.579,2.822-4.695,1.244-6.96l-21.377-30.677
+              c-0.008-0.011-0.019-0.02-0.027-0.031c-0.138-0.196-0.303-0.372-0.47-0.547c-0.061-0.064-0.113-0.141-0.177-0.201
+              c-0.132-0.124-0.286-0.226-0.432-0.336c-0.117-0.088-0.225-0.189-0.348-0.266c-0.094-0.059-0.202-0.098-0.301-0.151
+              c-0.193-0.103-0.384-0.209-0.588-0.285c-0.014-0.005-0.025-0.014-0.039-0.019c-0.117-0.043-0.237-0.057-0.354-0.091
+              c-0.183-0.052-0.364-0.11-0.552-0.141c-0.166-0.028-0.33-0.03-0.496-0.04c-0.157-0.01-0.313-0.028-0.471-0.024
+              c-0.169,0.005-0.333,0.034-0.5,0.056c-0.155,0.02-0.31,0.033-0.464,0.068c-0.166,0.038-0.324,0.099-0.486,0.154
+              c-0.145,0.049-0.292,0.089-0.434,0.153c-0.192,0.086-0.369,0.197-0.549,0.306c-0.09,0.055-0.185,0.091-0.273,0.152
+              c-0.01,0.007-0.018,0.017-0.028,0.024c-0.201,0.142-0.382,0.31-0.561,0.481c-0.061,0.058-0.132,0.107-0.19,0.167
+              c-0.121,0.128-0.219,0.278-0.326,0.419c-0.092,0.121-0.197,0.234-0.276,0.362c-0.052,0.083-0.086,0.18-0.134,0.267
+              c-0.111,0.205-0.222,0.409-0.303,0.626c-0.005,0.013-0.013,0.023-0.017,0.036L92.772,59.345
+              C91.822,61.938,93.153,64.81,95.746,65.76z M108.899,152.339c0-2.761-2.238-5-5-5H53.25c-2.762,0-5,2.239-5,5c0,2.761,2.238,5,5,5
+              h50.65C106.661,157.339,108.899,155.1,108.899,152.339z M130.157,121.839c0-2.761-2.238-5-5-5H53.25c-2.762,0-5,2.239-5,5
+              c0,2.761,2.238,5,5,5h71.907C127.919,126.839,130.157,124.6,130.157,121.839z M145.75,91.339c0-2.761-2.238-5-5-5h-87.5
+              c-2.762,0-5,2.239-5,5c0,2.761,2.238,5,5,5h87.5C143.512,96.339,145.75,94.1,145.75,91.339z M164.797,32.019
+              c-0.354-2.737-2.852-4.672-5.601-4.317l-6.681,0.865l-0.865-6.681c-0.354-2.738-2.851-4.673-5.601-4.317
+              c-2.738,0.354-4.672,2.862-4.317,5.6l0.865,6.681l-6.681,0.865c-2.738,0.354-4.672,2.861-4.317,5.6
+              c0.326,2.521,2.477,4.359,4.953,4.359c0.213,0,0.43-0.014,0.648-0.042l6.681-0.865l0.865,6.681c0.326,2.521,2.477,4.359,4.953,4.359
+              c0.213,0,0.43-0.014,0.647-0.042c2.738-0.354,4.672-2.862,4.317-5.6l-0.865-6.681l6.681-0.865
+              C163.218,37.265,165.151,34.758,164.797,32.019z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="nav-settings">
+      <a href="setting.html">
+        <svg class="setting-icon" width="800px" height="800px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M600.704 64a32 32 0 0 1 30.464 22.208l35.2 109.376c14.784 7.232 28.928 15.36 42.432 24.512l112.384-24.192a32 32 0 0 1 34.432 15.36L944.32 364.8a32 32 0 0 1-4.032 37.504l-77.12 85.12a357.12 357.12 0 0 1 0 49.024l77.12 85.248a32 32 0 0 1 4.032 37.504l-88.704 153.6a32 32 0 0 1-34.432 15.296L708.8 803.904c-13.44 9.088-27.648 17.28-42.368 24.512l-35.264 109.376A32 32 0 0 1 600.704 960H423.296a32 32 0 0 1-30.464-22.208L357.696 828.48a351.616 351.616 0 0 1-42.56-24.64l-112.32 24.256a32 32 0 0 1-34.432-15.36L79.68 659.2a32 32 0 0 1 4.032-37.504l77.12-85.248a357.12 357.12 0 0 1 0-48.896l-77.12-85.248A32 32 0 0 1 79.68 364.8l88.704-153.6a32 32 0 0 1 34.432-15.296l112.32 24.256c13.568-9.152 27.776-17.408 42.56-24.64l35.2-109.312A32 32 0 0 1 423.232 64H600.64zm-23.424 64H446.72l-36.352 113.088-24.512 11.968a294.113 294.113 0 0 0-34.816 20.096l-22.656 15.36-116.224-25.088-65.28 113.152 79.68 88.192-1.92 27.136a293.12 293.12 0 0 0 0 40.192l1.92 27.136-79.808 88.192 65.344 113.152 116.224-25.024 22.656 15.296a294.113 294.113 0 0 0 34.816 20.096l24.512 11.968L446.72 896h130.688l36.48-113.152 24.448-11.904a288.282 288.282 0 0 0 34.752-20.096l22.592-15.296 116.288 25.024 65.28-113.152-79.744-88.192 1.92-27.136a293.12 293.12 0 0 0 0-40.256l-1.92-27.136 79.808-88.128-65.344-113.152-116.288 24.96-22.592-15.232a287.616 287.616 0 0 0-34.752-20.096l-24.448-11.904L577.344 128zM512 320a192 192 0 1 1 0 384 192 192 0 0 1 0-384zm0 64a128 128 0 1 0 0 256 128 128 0 0 0 0-256z" /></svg>
+      </a>
+    </div>
+  </nav>
+  <main>
+    <section class="dashboard-top">
+      <p class="welcome">
+        Welcome in, Ililo
+      </p>
+    </section>
+    <section class="overview">
+      <div class="left">
+        <div class="rp">
+          <div class="recent">
+            Recent
+          </div>
+          <div class="progress">
+            Progress
+          </div>
+        </div>
+        <div class="strength">
+          <div class="strong">
+            Strength
+          </div>
+          <div class="weekness">
+            Weekness
+          </div>
+        </div>
+      </div>
+      
+      <div class="result">
+        Results
+        <div class="avg">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="30" fill="none" stroke="var(--lighttone-color)" stroke-width="13px"/>
+            <circle cx="50" cy="50" r="30" fill="none" stroke="var(--midtone-color)" stroke-width="10px" stroke-dasharray="calc((89 / 100)*188.5) 188.5" transform="rotate(-90) translate(-100)" stroke-linecap="round"/>
+            <text x="50" y="55" style="text-anchor: middle; font-size: 10px ">89%</text>
+
+          </svg>
+        </div>
+        <div class="sub-result">
+          <div class="sub-elm">
+            <p class="sub-result-text">
+            Math
+          </p>
+          <p class="sub-result-text">
+            90%
+          </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <section class="chat-bot">
+    <div class="AIlogo">
+      <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.41 56.41">
+        <g id="Layer_1-2" data-name="Layer 1">
+          <g>
+            <path class="cls-1" d="M40.92,22.81l15.49,3.79L29.81,0l3.79,15.49c.91,3.73,3.59,6.4,7.32,7.32Z"/>
+            <path class="cls-1" d="M33.27,40.59l-3.46,15.82,26.6-26.6-15.82,3.46c-3.81.83-6.48,3.51-7.32,7.32Z"/>
+            <path class="cls-1" d="M23.31,15.99L26.6,0,0,26.6l15.99-3.29c3.85-.79,6.52-3.46,7.32-7.32Z"/>
+            <path class="cls-1" d="M22.86,40.87c-.9-3.74-3.57-6.41-7.32-7.32L0,29.81l26.6,26.6-3.74-15.54Z"/>
+          </g>
+        </g>
+      </svg>
+      <p><span>Hi Altaye</span><br> I'm lenjisa, How can I help you today?</p>
+    </div>
+    <div class="text-bar">
+      <textarea placeholder="Ask me anything..."></textarea>
+      <button>Send</button>
+    </div>
+  </section>
+</body>
+</html>
