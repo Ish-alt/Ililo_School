@@ -3,160 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>home</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style/general.css">
-<link rel="stylesheet" href="style/sidbar.css">
-<link rel="stylesheet" href="style/chatbot.css">
+  <title>Document</title>
+  <link rel="stylesheet" href="style/general.css">
+  <link rel="stylesheet" href="style/sidbar.css">
+  <link rel="stylesheet" href="style/chatbot.css">
 
   <style>
-    main{
-      height: 90%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .dashboard-top{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .welcome{
-      color: var(--dark-color);
-      padding: 2rem;
-      width: 55%;
-      font-size: 80px;
-      font-weight: bold;
-    }
-
-    .progress-icon {
-      fill: none;
-      stroke: var(--dark-color);
-      stroke-width: 90px;
-      width: 100%;
-    }
-
-    .overview{
-      display: flex;
-      gap: .5rem;
-      height: 80%;
-    }
-
-    .result{
-      width: 25%;
-      height: auto;
-      padding: 2rem;
-      border-radius: 2rem;
-      background-color:var(--primary-color);
-      box-shadow: 3px 3px 15px var(--shadow);
-      color: var(--dark-color);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .avg{
-      display: flex;
-      justify-content: center;
+    .notes{
       position: relative;
-      color: var(--dark-color);
     }
 
-    .avg svg{
-      width: 100%;
-      bottom: 3px;
-    }
-
-    .avg-text{
+    .add-file{
       position: absolute;
-      top: 80%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 25px;
-      font-weight: 600;
-      text-align: center;
+      width: 20%;
+      height: 10%;
+      inset: 0;
+      margin: auto;
+      background-color: var(--primary-color);
     }
-
-    .sub-result{
-      display: flex;
-      flex-direction: column;
-      align-content: center;
-      background-color: var(--dark-color);
-      color: var(--highlight-color);
-      padding: 1rem;
-      border-radius: 1.5rem;
-      height: 60%;
-      font-size: 15px;
-      font-weight: 200;
-    }
-
-    .sub-elm{
-      display: flex;
-      justify-content: space-between;
-      background-color: var(--midtone-color);
-      padding: 1.5rem;
-      border-radius: 1rem;
-    }
-    
-    .left{
-      width: 80%;
-      display: flex;
-      flex-direction: column;
-      gap: .5rem;
-    }
-
-    .rp{
-      display: flex;
-      gap: .5rem;
-      height: 50%;
-      width: 100%;
-    }
-
-    .recent{
-      width: 30%;
-      background-color: var(--dark-color);
-      box-shadow: 3px 3px 15px var(--shadow);
-      border-radius: 2rem;
-      padding: 2rem;
-      color: var(--highlight-color);
-    }
-
-    .progress{
-      width: 70%;
-      background-color:var(--primary-color);
-      box-shadow: 3px 3px 15px var(--shadow);
-      border-radius: 2rem;
-      padding: 2rem;
-    }
-
-    .strength{
-      display: flex;  
-      gap: .5rem;
-      height: 50%;
-    }
-
-    .strong{
-      width: 50%;
-      background-color:var(--primary-color);
-      box-shadow: 3px 3px 15px var(--shadow);
-      border-radius: 2rem;
-      padding: 2rem;
-    }
-
-    .weekness{
-      width: 50%;
-      background-color:var(--primary-color);
-      box-shadow: 3px 3px 15px var(--shadow);
-      border-radius: 2rem;
-      padding: 2rem;
-    }
-
   </style>
 </head>
 <body>
@@ -232,55 +96,14 @@
       </a>
     </div>
   </nav>
-  <main>
-    <section class="dashboard-top">
-      <p class="welcome">
-        Welcome in, Ililo
-      </p>
-    </section>
-    <section class="overview">
-      <div class="left">
-        <div class="rp">
-          <div class="recent">
-            Recent
-          </div>
-          <div class="progress">
-            Progress
-          </div>
-        </div>
-        <div class="strength">
-          <div class="strong">
-            Strength
-          </div>
-          <div class="weekness">
-            Weekness
-          </div>
-        </div>
-      </div>
-      
-      <div class="result">
-        Results
-        <div class="avg">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="30" fill="none" stroke="var(--lighttone-color)" stroke-width="13px"/>
-            <circle cx="50" cy="50" r="30" fill="none" stroke="var(--midtone-color)" stroke-width="10px" stroke-dasharray="calc((89 / 100)*188.5) 188.5" transform="rotate(-90) translate(-100)" stroke-linecap="round"/>
-            <text x="50" y="55" style="text-anchor: middle; font-size: 10px ">89%</text>
-
-          </svg>
-        </div>
-        <div class="sub-result">
-          <div class="sub-elm">
-            <p class="sub-result-text">
-            Math
-          </p>
-          <p class="sub-result-text">
-            90%
-          </p>
-          </div>
-        </div>
-      </div>
+  <main class="notes">
+    <section class="add-file">
+      <p>You haven't upload anything, yet</p>
+      <span class="plus-sign">+</span>
+      <h3>Click here to uplod</h3>
     </section>
   </main>
+
   <section class="chat-bot">
     <div class="AIlogo">
       <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56.41 56.41">
