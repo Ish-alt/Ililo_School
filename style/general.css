@@ -21,6 +21,7 @@ body {
   grid-template-columns: 4rem 1fr 25%;
   gap: 1rem;
   background: radial-gradient(circle at 100% 100%, var(--highlight-color)5% 10%, var(--primary-color) 90% 100%), radial-gradient(circle at 0% 0%,var(--highlight-color)0% 5%, var(--primary-color) 60% 100%);
+  transition: all .3s ease;
 }
 
 svg {
@@ -28,3 +29,12 @@ svg {
   height: auto;
   stroke: none;
 }
+
+.display-on{
+  display: block;
+}
+
+.display-off{
+  display: none;
+}
+
