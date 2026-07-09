@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Notes</title>
   <link rel="stylesheet" href="style/general.css">
   <link rel="stylesheet" href="style/sidbar.css">
   <link rel="stylesheet" href="style/chatbot.css">
@@ -21,7 +21,7 @@
       margin: auto;
       color: var(--dark-color);
       background-color: var(--primary-color);
-      box-shadow: 0px 0px 150px var(--lighttone-color);
+      box-shadow: 0px 0px 90px var(--lighttone-color);
       border: 1px solid var(--midtone-color);
       display: flex;
       flex-direction: column;
@@ -29,11 +29,104 @@
       justify-content: center;
       gap: 1.3rem;
       border-radius: 2rem;
+      cursor: pointer;
     }
 
     .upload-icon{
       width: 20%;
       stroke: var(--dark-color)
+    }
+
+    .add-file:hover{
+      animation: glow 1s ease infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        box-shadow: 0px 0px 150px var(--lighttone-color);
+        transform: scale(.99);
+      }
+      50% {
+        box-shadow: 0px 0px 50px var(--lighttone-color);
+        transform: scale(1);
+      }
+    }
+
+    .float{
+      position: fixed;
+      width: 35%;
+      height: 45%;
+      color: var(--dark-color);
+      background-color: var(--primary-color);
+      box-shadow: 3px 3px 15px var(--shadow);
+      backdrop-filter: blur(1px);
+      border-radius: 3rem;
+      inset: 0;
+      margin: auto;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      display: none;
+    }
+
+    .float-open{
+      display: flex;
+      animation: app 1s ease;
+    }
+
+    @keyframes app{
+      0%{
+        transform: scale(0);
+      }
+      50%{
+        transform: scale(1);
+      }
+    }
+
+    .upload-img{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--dark-color);
+      border-radius: 2rem;
+      height: 60%;
+      cursor: pointer;
+    }
+
+    .upload-img svg{
+      width: 20%;
+    }
+
+    .upload-img input[type=file]{
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+
+    .fill-sub{
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    .fill-sub input{
+      background-color: transparent;
+      border: 1px solid var(--dark-color);
+      border-radius: 3rem;
+      padding: .3rem;
+    }
+
+    .float button{
+      margin-inline: auto;
+      padding: 1rem 2rem;
+      background-color: var(--dark-color);
+      color: var(--lighttone-color);
+      border: none;
+      border-radius: 3rem;
+      font-size: 15px;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -112,15 +205,33 @@
   </nav>
   <main class="notes">
     <section class="add-file">
+      
       <p>You haven't uploaded anything, yet</p>
       <svg class="upload-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M17 17H17.01M15.6 14H18C18.9319 14 19.3978 14 19.7654 14.1522C20.2554 14.3552 20.6448 14.7446 20.8478 15.2346C21 15.6022 21 16.0681 21 17C21 17.9319 21 18.3978 20.8478 18.7654C20.6448 19.2554 20.2554 19.6448 19.7654 19.8478C19.3978 20 18.9319 20 18 20H6C5.06812 20 4.60218 20 4.23463 19.8478C3.74458 19.6448 3.35523 19.2554 3.15224 18.7654C3 18.3978 3 17.9319 3 17C3 16.0681 3 15.6022 3.15224 15.2346C3.35523 14.7446 3.74458 14.3552 4.23463 14.1522C4.60218 14 5.06812 14 6 14H8.4M12 15V4M12 4L15 7M12 4L9 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      </span>
       <h3>Click here to uplod</h3>
     </section>
   </main>
 
+  <div class="float">
+    <label class="upload-img">
+      <input type="file" accept="image/*">
+      <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 10V16M12 16L10 14M12 16L14 14M12.0627 6.06274L11.9373 5.93726C11.5914 5.59135 11.4184 5.4184 11.2166 5.29472C11.0376 5.18506 10.8425 5.10425 10.6385 5.05526C10.4083 5 10.1637 5 9.67452 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V15.8C3 16.9201 3 17.4802 3.21799 17.908C3.40973 18.2843 3.71569 18.5903 4.09202 18.782C4.51984 19 5.07989 19 6.2 19H17.8C18.9201 19 19.4802 19 19.908 18.782C20.2843 18.5903 20.5903 18.2843 20.782 17.908C21 17.4802 21 16.9201 21 15.8V10.2C21 9.0799 21 8.51984 20.782 8.09202C20.5903 7.71569 20.2843 7.40973 19.908 7.21799C19.4802 7 18.9201 7 17.8 7H14.3255C13.8363 7 13.5917 7 13.3615 6.94474C13.1575 6.89575 12.9624 6.81494 12.7834 6.70528C12.5816 6.5816 12.4086 6.40865 12.0627 6.06274Z" stroke="var(--dark-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Add your image here
+    </label>
+    <label class="fill-sub">
+      Subject
+      <input type="text" placeholder="fill subject name">
+    </label>
+    <button>
+      Submit
+    </button>
+  </div>
+
   <script src="js/chat-bot.js"></script>
+  <script type="module" src="js/note.js"></script>
 </body>
 </html>
