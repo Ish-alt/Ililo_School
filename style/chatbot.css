@@ -1,5 +1,5 @@
 .chat-bot{
-  position: relative;
+  position: fixed;
   border-radius: 2rem 0 0 2rem;
   background: radial-gradient(circle, var(--primary-color), var(--highlight-color));
   box-shadow: -2px 3px 15px var(--shadow);
@@ -10,6 +10,8 @@
   gap: 2rem;
   align-items: center;
   padding: 1rem;
+  inset: 0 0 0 75%;
+  transition: all .3s ease;
 }
 
 .AIlogo{
@@ -88,7 +90,7 @@
 }
 
 .chat-close{
-  grid-template-columns: 4rem 1fr 2%;
+  grid-template-columns:1fr 0;
   transition: all .3s ease;
   .AIlogo, .text-bar, .chat-bot button{
     display: none;
@@ -96,5 +98,7 @@
   .chat-opener{
     display: block;
   }
-
+  .chat-bot{
+    inset: 0 0 0 98%;
+  }
 }

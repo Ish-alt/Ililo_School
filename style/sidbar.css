@@ -1,6 +1,7 @@
 nav {
-  position: sticky;
+  position: fixed;
   top: 10%;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -8,7 +9,7 @@ nav {
   padding: 3rem 1rem;
   background-color: var(--dark-color);
   height: 80%;
-  clip-path: path("M 64,50 A 17,17 0,0,0 50,30 A 90,100 0,0,1 0,0 L 0,850 A 90,100 0,0,1 50,820 A 17,17 0,0,0 64,800 Z");
+  width: 4rem;
    svg{
     fill: var(--highlight-color);
   }
