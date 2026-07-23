@@ -11,7 +11,7 @@
 
   <style>
     .lesson-page{
-      padding: 2rem;
+      padding: 5rem 2rem;
       display: flex;
       flex-direction: column;
       gap: 2rem;
@@ -24,6 +24,18 @@
       box-shadow: 3px 3px 15px var(--shadow);
       border-radius: 2rem;
       padding: 1rem;
+      display: grid;
+      grid-template-rows: 4em 0fr;
+      transition: all .3s ease;
+
+    }
+
+    .lesson-on{
+      grid-template-rows: 4em 1fr;
+    }
+
+    .subject-wrapper {
+      overflow: hidden;
     }
 
     .Grade p{
@@ -54,6 +66,16 @@
       width: 40%;
     }
 
+    .natural-social{
+      position: fixed;
+      z-index: 9;
+      width: 100%;
+      top: 0;
+      padding: 1rem;
+      
+      backdrop-filter: blur(15px);
+    }
+
     .natural-social button{
       padding: 1rem 2rem;
       border: none;
@@ -73,9 +95,20 @@
       background-color: var(--dark-color);
       color: var(--lighttone-color);
     }
+
+    .title{
+      display: flex;
+      justify-content: space-between;
+      padding: 1em;
+    }
+
+
   </style>
 </head>
 <body>
+
+  <div class="bg"></div>
+
   <nav>
     <div class="nav-top">
       <div>

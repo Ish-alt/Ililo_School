@@ -1,5 +1,6 @@
 .chat-bot{
   position: fixed;
+  z-index: 99;
   border-radius: 2rem 0 0 2rem;
   background: radial-gradient(circle, var(--primary-color), var(--highlight-color));
   box-shadow: -2px 3px 15px var(--shadow);
