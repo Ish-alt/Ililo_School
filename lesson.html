@@ -27,7 +27,6 @@
       display: grid;
       grid-template-rows: 4em 0fr;
       transition: all .3s ease;
-
     }
 
     .lesson-on{
@@ -70,28 +69,29 @@
       position: fixed;
       z-index: 9;
       width: 100%;
+      height: 5rem;
       top: 0;
-      padding: 1rem;
-      
+      align-content: center;
       backdrop-filter: blur(15px);
     }
 
     .natural-social button{
-      padding: 1rem 2rem;
+      width: 10rem;
+      height: 3rem;
       border: none;
       border-radius: 5rem;
       background-color: var(--lighttone-color);
       color: var(--dark-color);
       font-weight: bold;
-      transition: all .3s ease;
+      transition: all .15s ease;
+      cursor: pointer;
     }
 
     .natural-social button:hover{
-      background-color: var(--dark-color);
-      color: var(--lighttone-color);      
+      font-size: 12px;     
     }
 
-    .button-active{
+    .natural-social button.selected-btn{
       background-color: var(--dark-color);
       color: var(--lighttone-color);
     }
@@ -102,7 +102,18 @@
       padding: 1em;
     }
 
+    .title svg{
+      transition: all .3s ease;
+    }
 
+    .ninty-rotate{
+      transform: rotate(180deg);
+      transition: all .3s ease;
+    }
+
+    .off{
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -185,8 +196,8 @@
   <main class="lesson-page">
 
     <section class="natural-social">
-      <button>Natural Science</button>
-      <button>Social Science</button>
+      <button class="nat-btn">Natural Science</button>
+      <button class="soc-btn">Social Science</button>
     </section>
 
   </main>

@@ -112,21 +112,27 @@ const SG12 = [
 ]
 
 export const Grade = [{
+  id: "G9",
   title: "Grade 9",
   grade: G9
 },{
+  id: "G10",
   title: "Grade 10",
   grade: G10
 },{
+  id: "NG11",
   title: "Grade 11",
-  grade:  NG11
+  grade: NG11
 },{
+  id: "NG12",
   title: "Grade 12",
   grade: NG12
 },{
+  id: "SG11",
   title: "Grade 11",
-  grade:  SG11
+  grade: SG11
 },{
+  id: "SG12",
   title: "Grade 12",
   grade: SG12
 }]
